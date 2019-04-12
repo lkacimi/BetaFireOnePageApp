@@ -3,5 +3,5 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      Access: Private
+      AccessControl: Private
       BucketName: beta-fire-one-page-app-bucket
