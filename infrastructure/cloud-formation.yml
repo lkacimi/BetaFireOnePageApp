@@ -3,4 +3,4 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: beta-fire-one-page-app-bucket-27
+      BucketName: beta-fire-one-page-app-bucket
