@@ -35,4 +35,4 @@ artifacts:
     - node_modules/lodash/*
     - infrastructure/*
     - app/build/*
-    - build/*
+    - code-build/*
