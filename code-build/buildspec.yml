@@ -19,8 +19,9 @@ phases:
       - cd api && yarn install
       - cd ../app && npm install && yarn build
       - cd ..
-      - mkdir react
-      - mv app/build react
+      - mkdir api/react
+      - ls -al
+      - cd app/build && mv * .[^.]* ../api/react
       - ls -al
   pre_build:
     commands:
