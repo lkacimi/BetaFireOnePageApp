@@ -14,22 +14,16 @@ phases:
       - yarn -v
       # Installing react and serverless dependencies
       - yarn install
-      - ls
+      - ls -al
       - pwd
       - cd api && yarn install
-  pre_build:
-    commands:
-      - echo Installing source NPM dependencies...
       - cd app
       - npm install
       - yarn build
+  pre_build:
+    commands:
   build:
     commands:
-      - echo Build started on `date`
-      - echo Compiling the Node.js code
-      - mocha test.js
-      - cd app
-      - yarn build
   post_build:
     commands:
       - echo Build completed on `date`
