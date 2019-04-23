@@ -21,6 +21,7 @@ phases:
       - cd ..
       - mkdir react
       - mv app/build react
+      - ls -al
   pre_build:
     commands:
   build:
