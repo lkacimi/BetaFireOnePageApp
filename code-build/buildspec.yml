@@ -4,14 +4,23 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing Mocha...
-      - npm install -g mocha
+      # Yarn installation
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+      - sudo apt-get -y update
+      - apt-get install -y yarn
+      # Installing serverless globally
+      - yarn global add serverless
+      - yarn -v
+      # Installing react and serverless dependencies
+      - yarn install
+      - cd serverless && yarn install
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
+      - cd app
       - npm install
-      - npm install unit.js
-      - npm install create-react-app
+      - yarn build
   build:
     commands:
       - echo Build started on `date`
