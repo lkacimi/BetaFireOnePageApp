@@ -5,3 +5,15 @@ Resources:
     Properties:
       AccessControl: Private
       BucketName: beta-fire-one-page-app-bucket
+  BetaFireFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs8.10
+      CodeUri: ./../api/
+    Events:
+        RootEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: GET
