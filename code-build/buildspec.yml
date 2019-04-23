@@ -17,9 +17,7 @@ phases:
       - ls -al
       - pwd
       - cd api && yarn install
-      - cd app
-      - npm install
-      - yarn build
+      - cd ../app && npm install && yarn build
   pre_build:
     commands:
   build:
@@ -33,11 +31,7 @@ phases:
 # ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
 artifacts:
   files:
-    - app.js
-    - index.html
-    - package.json
-    - node_modules/async/*
-    - node_modules/lodash/*
+    - api/*
     - infrastructure/*
     - app/build/*
     - code-build/*
