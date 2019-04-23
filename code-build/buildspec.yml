@@ -14,7 +14,9 @@ phases:
       - yarn -v
       # Installing react and serverless dependencies
       - yarn install
-      - cd serverless && yarn install
+      - ls
+      - pwd
+      - cd api && yarn install
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
