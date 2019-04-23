@@ -32,5 +32,6 @@ phases:
 artifacts:
   files:
     - api/*
+    - api/*/*
     - infrastructure/*
     - code-build/*
