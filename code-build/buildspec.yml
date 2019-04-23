@@ -18,6 +18,9 @@ phases:
       - pwd
       - cd api && yarn install
       - cd ../app && npm install && yarn build
+      - cd ..
+      - mkdir react
+      - mv app/build react
   pre_build:
     commands:
   build:
@@ -33,5 +36,5 @@ artifacts:
   files:
     - api/*
     - infrastructure/*
-    - app/build/*
+    - react/*
     - code-build/*
