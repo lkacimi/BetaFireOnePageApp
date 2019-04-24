@@ -1,6 +1,5 @@
 /**
     Lambda Function to expose Betafire REST API
-
  **/
 const fs = require('fs');
 const mime = require('mime-types');
