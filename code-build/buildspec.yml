@@ -26,12 +26,16 @@ phases:
     commands:
       #- aws s3api create-bucket --bucket beta-fire-deployment-bucket --region eu-west-3 --create-bucket-configuration LocationConstraint=eu-west-3
       - cd .. && cd ..
-      - zip -r api.zip api/node_modules
-      - zip -r api.zip api/index.js
-      - zip -r api.zip api/react 
+      - cd api
+      - zip -r ../api.zip node_modules
+      - zip -r ../api.zip index.js
+      - zip -r ../api.zip react
+      - zip -r ../api.zip modules
+      - cd ..
       - ls -al
       - pwd
       - aws s3api put-object --bucket beta-fire-deployment-bucket --key app.zip --body api.zip
+      - sleep 10
   build:
     commands:
   post_build:
