@@ -28,7 +28,7 @@ phases:
       - cd .. && cd ..
       - zip -r api.zip api
       - ls -al
-      - aws s3api put-object --bucket beta-fire-deployment-bucket --key app.zip --body ./app.zip
+      - aws s3api put-object --bucket beta-fire-deployment-bucket --key app.zip --body $(pwd)/app.zip
   build:
     commands:
   post_build:
