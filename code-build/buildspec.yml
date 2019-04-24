@@ -15,7 +15,7 @@ phases:
       - yarn install
       - ls -al
       - pwd
-      - cd api && yarn install
+      - cd api && npm install
       - cd ../app && npm install && yarn build
       - cd ..
       - mkdir api/react
@@ -26,7 +26,9 @@ phases:
     commands:
       #- aws s3api create-bucket --bucket beta-fire-deployment-bucket --region eu-west-3 --create-bucket-configuration LocationConstraint=eu-west-3
       - cd .. && cd ..
-      - zip -r api.zip api/*
+      - zip -r api.zip api/node_modules
+      - zip -r api.zip api/index.js
+      - zip -r api.zip api/react 
       - ls -al
       - pwd
       - aws s3api put-object --bucket beta-fire-deployment-bucket --key app.zip --body api.zip
