@@ -8,14 +8,9 @@ Resources:
   BetaFireFunction:
     Type: AWS::Lambda::Function
     Properties:
+      FunctionName: 'BetaFireFunction'
       Handler: index.handler
       Runtime: nodejs8.10
       Code:
         - S3Bucket: 'beta-fire-deployment-bucket'
         - S3Key: 'app.zip'
-      Events:
-        RootEvent:
-          Type: Api
-          Properties:
-            Path: /
-            Method: GET
