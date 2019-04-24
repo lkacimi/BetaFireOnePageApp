@@ -27,7 +27,8 @@ phases:
       - aws s3api create-bucket --bucket beta-fire-deployment-bucket --region eu-west-3 --create-bucket-configuration LocationConstraint=eu-west-3
       - cd .. && cd ..
       - zip -r api.zip api
-      - aws s3api put-object --bucket beta-fire-deployment-bucket --key app.zip --body app.zip
+      - ls -al
+      - aws s3api put-object --bucket beta-fire-deployment-bucket --key app.zip --body ./app.zip
   build:
     commands:
   post_build:
