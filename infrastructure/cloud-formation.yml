@@ -30,7 +30,7 @@ Resources:
       Runtime: nodejs8.10
       Code:
         S3Bucket: 'beta-fire-deployment-bucket'
-        S3Key: 'app.zip'
+        S3Key: 'app-1.zip'
       Role:
         Fn::GetAtt:
           - BetaFireLambdaRole
