@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import logo from './betafire.png'
-import './betafire.css';
+import logo from '.././betafire.png'
+import '.././betafire.css';
 
 export default class BetaFireApp extends Component {
     render() {
